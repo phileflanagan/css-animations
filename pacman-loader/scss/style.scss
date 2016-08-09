@@ -1,3 +1,10 @@
+@import 'https://fonts.googleapis.com/css?family=Reem+Kufi';
+
+$pacman: yellow;
+$dots: white;
+$track: black;
+$walls: blue;
+
 body {
   padding: 100px;
 	background: #eee;
@@ -19,9 +26,9 @@ h1 {
 }
 
 .track {
-	border-top: blue 5px solid;
-	border-bottom: blue 5px solid;
-	background-color: black;
+	border-top: $walls 5px solid;
+	border-bottom: $walls 5px solid;
+	background-color: $track;
 	height: 90px;
 }
 
@@ -30,7 +37,7 @@ h1 {
 	display: inline-block;
 	width: 20px;
 	height: 20px;
-	background-color: white;
+	background-color: $dots;
 	border-radius: 50%;
 	margin: 10px 30px;
 		&:nth-child(1) {
@@ -52,7 +59,7 @@ h1 {
 			animation: disappear 5s linear 3.3s infinite;
 		}
 		&:nth-child(7) {
-			animation: disappear 5s linear 3.5s infinite;
+			animation: disappear 5s linear 3.6s infinite;
 		}
 		&:nth-child(8) {
 			animation: disappear 5s linear 4.0s infinite;
@@ -68,13 +75,13 @@ h1 {
 	display: inline-block;
 	position: relative;
 	animation: moveChomp 5s linear infinite;
-	
+
 	&:before, &:after {
 		content: '';
 		display: block;
 		height: 0px;
 		width: 0px;
-		border: 30px solid yellow;
+		border: 30px solid $pacman;
 		border-radius: 50%;
 		border-right-color: transparent;
 		border-bottom-color: transparent;
@@ -82,7 +89,7 @@ h1 {
 		animation: topchomp 0.5s linear infinite reverse;
 	}
 	&:after {
-		border-color: yellow;
+		border-color: $pacman;
 		border-top-color: transparent;
 		border-right-color: transparent;
 		animation: bottomchomp 0.5s linear infinite;
@@ -118,7 +125,7 @@ h1 {
 
 @keyframes disappear {
 	0% {
-		background-color: white;
+		background-color: $dots;
 	}
 	1% {
 		background-color: transparent;
@@ -127,6 +134,6 @@ h1 {
 		background-color: transparent;
 	}
 	41% {
-		background-color: white;
+		background-color: $dots;
 	}
 }
